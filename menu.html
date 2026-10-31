@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Menu | Your Restaurant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="menu">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <div class="brand-logo">🍔</div>
+        <strong>Your Restaurant Menu</strong>
+        <span>Your Slogan</span>
+      </a>
+      <div class="side-heading">Quick Links</div>
+      <nav class="side-nav">
+        <a href="index.html">1. Home</a>
+        <a class="active" href="menu.html">2. Your Orders</a>
+        <a href="#" data-action="wallet">3. Wallet</a>
+        <a href="#" data-action="profile">4. Profile</a>
+        <a href="#" data-action="logout">5. Logout</a>
+      </nav>
+      <div class="side-heading about-heading">More About Us</div>
+      <nav class="side-nav">
+        <a href="#menu">1. Our blog</a>
+        <a href="#menu">2. Upcoming Dishes</a>
+        <a href="#menu">3. Our Story</a>
+        <a href="#menu">4. Social Media Links</a>
+      </nav>
+      <div class="sidebar-footer">Fresh food. Happy mood.</div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search food item">
+        </label>
+        <div class="top-actions">
+          <button class="btn btn-red" data-action="signup">SignUp</button>
+          <button class="btn btn-red" data-action="login">Login</button>
+          <button class="cart-icon" id="openCart" aria-label="Open cart">🛒<span id="cartCount">0</span></button>
+        </div>
+      </header>
+      <section class="menu-section full-menu" id="menu">
+        <div class="section-heading">
+          <div><p class="eyebrow dark-eyebrow">FRESH FROM OUR KITCHEN</p><h2>Menu</h2></div>
+          <a class="view-all" href="index.html">← Back to Home</a>
+        </div>
+        <div class="food-grid" id="foodGrid"><div class="loading">Loading delicious food...</div></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header"><h2>Your Cart</h2><button id="closeCart" class="close-btn">×</button></div>
+    <div id="cartItems" class="cart-items"><p class="empty-cart">Your cart is empty.</p></div>
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+    <button class="btn btn-red checkout-btn" id="checkoutBtn">Place Order</button>
+    <p class="cart-hint">Your order will be prepared after confirmation.</p>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
